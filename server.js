@@ -65,9 +65,9 @@ const USERS = [
 //     (aka, `req.user = matchedUser`)
 function gateKeeper(req, res, next) {
   // your code should replace the line below
-  const credentials = null;
-  const username = null;
-  const password = null;
+  const credentials = queryString.parse(req.get('username-password'));
+  const username = credentials.username;
+  const password = credentials.passord;
   
   next();
 }
